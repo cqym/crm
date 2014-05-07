@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+	<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="jquery.gridly.js" type="text/javascript"></script>
+	<link href="jquery.gridly.css" rel="stylesheet" type="text/css" />
+
+      <link href='sample.css' rel='stylesheet' type='text/css'/>
+      <script src='rainbow.js' type='text/javascript'></script>
+      
+
+
+<style type="text/css">
+  .gridly {
+    position: relative;
+    width: 960px;
+  }
+  .brick.small {
+    width: 140px;
+    height: 140px;
+  }
+  .brick.large {
+    width: 300px;
+    height: 300px;
+  }
+  .brick.img{
+     width: 140px;
+     height: 100px;
+  }
+  .brick.title{
+     position: relative;
+     width: 140px;
+     height: 40px;
+	 background-color: #eeeeee;
+	 overflow:hidden;
+	 text-overflow:ellipsis;
+	 text-decoration:none;
+  }
+</style>
+ </head>
+
+ <body>
+ <section class='example'>
+        <div class='gridly'>
+          <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"><a href="#"><strong>项目名称项目名称项目名称项目名称项目名称项目名称</strong></a></div>
+          </div>
+		  <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"><a href="#">项目名称项目名称项目名称项目名称项目名称</a></div>
+          </div>
+		  <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"><a href="#">项目名称项目名称项目名称项目名称</a></div>
+          </div>
+		  <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"><a href="#">sdsdfsfdsfdsfdsfdsdfadsfdasfadsfdas</a></div>
+          </div>
+		  <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"><a href="#">sdsdfsfdsfdsfdsfdsdfadsfdasfadsfdas</a></div>
+          </div>
+		  <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"></div>
+          </div>
+		  <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"></div>
+          </div>
+		  <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"></div>
+          </div>
+		  <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"></div>
+          </div>
+		  <div class='brick small'>
+            <a class='delete' href='#'>&times;</a>
+			<img class="brick img" src="date.gif">
+			<div class="brick title"></div>
+          </div>
+        </div>
+        <p class='actions'>
+          <a class='add button' href='#'>Add</a>
+        </p>
+      </section>
+
+<script>
+  $('.gridly').gridly({
+    base: 60, // px 
+    gutter: 20, // px
+    columns: 12
+  });
+</script>
+ </body>
+</html>
