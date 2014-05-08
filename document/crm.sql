@@ -1,112 +1,114 @@
-/*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2014/5/2 20:18:20                            */
-/*==============================================================*/
+-- --------------------------------------------------------
+-- 主机:                           127.0.0.1
+-- 服务器版本:                        5.5.11 - MySQL Community Server (GPL)
+-- 服务器操作系统:                      Win32
+-- HeidiSQL 版本:                  8.1.0.4545
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- 导出 crm 的数据库结构
+DROP DATABASE IF EXISTS `crm`;
+CREATE DATABASE IF NOT EXISTS `crm` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `crm`;
 
 
-drop table if exists Table_3;
+-- 导出  表 crm.c_discuss_detail 结构
+DROP TABLE IF EXISTS `c_discuss_detail`;
+CREATE TABLE IF NOT EXISTS `c_discuss_detail` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `content` varchar(200) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  `discuss_main_id` bigint(20) DEFAULT NULL,
+  `project_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `user_name` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-drop table if exists c_discuss_detail;
+-- 数据导出被取消选择。
 
-drop table if exists c_discuss_main;
 
-drop table if exists c_group_info;
+-- 导出  表 crm.c_discuss_main 结构
+DROP TABLE IF EXISTS `c_discuss_main`;
+CREATE TABLE IF NOT EXISTS `c_discuss_main` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `content` varchar(200) DEFAULT NULL,
+  `theme` varchar(200) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  `project_id` bigint(20) DEFAULT NULL,
+  `create_user_id` bigint(20) DEFAULT NULL,
+  `create_user_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-drop table if exists c_log_info;
+-- 数据导出被取消选择。
 
-drop table if exists c_project_info;
 
-drop table if exists c_user_info;
+-- 导出  表 crm.c_group_info 结构
+DROP TABLE IF EXISTS `c_group_info`;
+CREATE TABLE IF NOT EXISTS `c_group_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `leader_id` bigint(20) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  `leader_name` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*==============================================================*/
-/* Table: Table_3                                               */
-/*==============================================================*/
-create table Table_3;
+-- 数据导出被取消选择。
 
-/*==============================================================*/
-/* Table: c_discuss_detail                                      */
-/*==============================================================*/
-create table c_discuss_detail
-(
-   id                   bigint not null auto_increment,
-   content              varchar(200),
-   create_date          datetime,
-   discuss_main_id      bigint,
-   project_id           bigint,
-   user_id              bigint,
-   user_name            varchar(40),
-   primary key (id)
-);
 
-/*==============================================================*/
-/* Table: c_discuss_main                                        */
-/*==============================================================*/
-create table c_discuss_main
-(
-   id                   bigint not null auto_increment,
-   content              varchar(200),
-   create_date          datetime,
-   project_id           bigint,
-   create_user_id       bigint,
-   primary key (id)
-);
+-- 导出  表 crm.c_log_info 结构
+DROP TABLE IF EXISTS `c_log_info`;
+CREATE TABLE IF NOT EXISTS `c_log_info` (
+  `id` bigint(20) NOT NULL,
+  `group_id` bigint(20) DEFAULT NULL,
+  `content` varchar(200) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  `op_user_id` bigint(20) DEFAULT NULL,
+  `op_user_name` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*==============================================================*/
-/* Table: c_group_info                                          */
-/*==============================================================*/
-create table c_group_info
-(
-   id                   bigint not null auto_increment,
-   leader_id            bigint,
-   create_date          datetime,
-   leader_name          varchar(40),
-   primary key (id)
-);
+-- 数据导出被取消选择。
 
-/*==============================================================*/
-/* Table: c_log_info                                            */
-/*==============================================================*/
-create table c_log_info
-(
-   id                   bigint not null,
-   group_id             bigint,
-   content              varchar(200),
-   create_date          datetime,
-   op_user_id           bigint,
-   op_user_name         varchar(40),
-   primary key (id)
-);
 
-/*==============================================================*/
-/* Table: c_project_info                                        */
-/*==============================================================*/
-create table c_project_info
-(
-   id                   bigint not null auto_increment,
-   project_name         varchar(100),
-   remark               varbinary(1000),
-   create_date          datetime,
-   create_user_id       bigint,
-   create_user_name     varchar(40),
-   group_id             bigint,
-   primary key (id)
-);
+-- 导出  表 crm.c_project_info 结构
+DROP TABLE IF EXISTS `c_project_info`;
+CREATE TABLE IF NOT EXISTS `c_project_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `project_name` varchar(100) DEFAULT NULL,
+  `remark` varchar(50) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  `create_user_id` bigint(20) DEFAULT NULL,
+  `create_user_name` varchar(40) DEFAULT NULL,
+  `group_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*==============================================================*/
-/* Table: c_user_info                                           */
-/*==============================================================*/
-create table c_user_info
-(
-   id                   bigint not null auto_increment,
-   login_name           varchar(20),
-   name                 varchar(20),
-   password             varchar(40),
-   register_date        datetime,
-   status               tinyint,
-   email                varchar(40),
-   salt                 varchar(40),
-   roles                varchar(100),
-   group_id             bigint,
-   primary key (id)
-);
+-- 数据导出被取消选择。
 
+
+-- 导出  表 crm.c_user_info 结构
+DROP TABLE IF EXISTS `c_user_info`;
+CREATE TABLE IF NOT EXISTS `c_user_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `login_name` varchar(20) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `password` varchar(40) DEFAULT NULL,
+  `register_date` datetime DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `email` varchar(40) DEFAULT NULL,
+  `salt` varchar(40) DEFAULT NULL,
+  `roles` varchar(100) DEFAULT NULL,
+  `group_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 数据导出被取消选择。
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
