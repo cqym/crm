@@ -5,10 +5,17 @@
 		<pattern>/api/*</pattern>
 	</excludes>
 	
+	<decorator name="projectsTemp" page="projects_temple.jsp">
+		<pattern>/project/list/*</pattern>
+	</decorator>
+
 	<decorator name="default" page="default.jsp">
 		<pattern>/account/*</pattern>
 		<pattern>/menu</pattern>
 		<pattern>/project/*</pattern>
 		<pattern>/discuss/*</pattern>
 	</decorator>
+
+	
+	
 </decorators>

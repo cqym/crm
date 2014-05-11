@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<div class="page sheet sheet-root sheet-active" data-since="2014-05-10 13:23:52 UTC" id="page-project" data-page-name="${project.projectName}">
 		<div class="page-inner">
 			<div class="project-header">
 			    <div class="project-hd-info">
@@ -18,6 +19,15 @@
 					<span class="project-desc">${project.remark}</span>
 				</div>
 			</div>
+		</div>
+			<div class="project-links">
+					<a href="#" class="link-admin link-admin-members" title="成员管理" data-visible-to="admin" data-stack="" data-nocache="" style="display: block;">成员</a>
+
+				<a href="/projects/settings/${project.id}" class="link-admin link-admin-settings" title="项目设置" data-visible-to="admin" data-stack="" data-nocache="" style="display: block;">设置</a>
+
+				<a href="#" class="link-admin link-recap" data-nocache="true" data-stack="true" title="查看项目的每日进展">进展</a>
+
+				<a href="#" class="link-admin link-stat" title="项目数据统计" data-stack="" data-nocache="">统计</a>
 			</div>
 			<div class="section-messages" data-droppable>
 				<h3 class="topics-head">
@@ -32,6 +42,7 @@
 				<a class="message-link" href="${ctx}/discuss/detail/${discuss.id}">
 				    <span class="message-title">${discuss.theme}</span>
 					<span class="message-content">${discuss.content}</span>
+					<span class="time" title="2014-05-03" data-abstime="2014-05-03 12:55:03 +0800" data-pretty-format="short">${discuss.createDate}</span>
 				</a>
 				</div>
 			</c:forEach>
@@ -59,6 +70,6 @@
 					</fieldset>
 				</form>
 			</c:if>
-			
+</div>	
 </body>
 </html>

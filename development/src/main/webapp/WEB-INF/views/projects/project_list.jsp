@@ -15,11 +15,9 @@
         <div class='gridly'>
 		  <c:forEach items="${projects}" var="proj">
 			  <div name="projBlock" class='brick small' value="${proj.id}">
-			  <a class="folder c2 i2">
 				<a class='delete' href='#'>&times;</a>
-				<div>${proj.projectName}</div>
-				<div>${proj.remark}</div>
-			  </a>
+				<img class="brick img" src="${ctx}/static/images/date.gif">
+				<div class="brick title"><a class="code" href="#" value="${proj.id}">${proj.projectName}</a></div>
 			  </div>
 		  </c:forEach>
         </div>
@@ -36,7 +34,7 @@
     columns: 13
   });
 
-$("div[name=projBlock]").click(function(){
+  $(".code").click(function(){
 	  var id = $(this).attr('value');
       document.location.href = "${ctx}/project/view/" + id;
   });

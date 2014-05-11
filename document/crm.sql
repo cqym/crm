@@ -11,13 +11,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- 导出 crm 的数据库结构
-DROP DATABASE IF EXISTS `crm`;
 CREATE DATABASE IF NOT EXISTS `crm` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `crm`;
 
 
 -- 导出  表 crm.c_discuss_detail 结构
-DROP TABLE IF EXISTS `c_discuss_detail`;
 CREATE TABLE IF NOT EXISTS `c_discuss_detail` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `content` varchar(200) DEFAULT NULL,
@@ -33,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `c_discuss_detail` (
 
 
 -- 导出  表 crm.c_discuss_main 结构
-DROP TABLE IF EXISTS `c_discuss_main`;
 CREATE TABLE IF NOT EXISTS `c_discuss_main` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `content` varchar(200) DEFAULT NULL,
@@ -49,7 +46,6 @@ CREATE TABLE IF NOT EXISTS `c_discuss_main` (
 
 
 -- 导出  表 crm.c_group_info 结构
-DROP TABLE IF EXISTS `c_group_info`;
 CREATE TABLE IF NOT EXISTS `c_group_info` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `leader_id` bigint(20) DEFAULT NULL,
@@ -62,7 +58,6 @@ CREATE TABLE IF NOT EXISTS `c_group_info` (
 
 
 -- 导出  表 crm.c_log_info 结构
-DROP TABLE IF EXISTS `c_log_info`;
 CREATE TABLE IF NOT EXISTS `c_log_info` (
   `id` bigint(20) NOT NULL,
   `group_id` bigint(20) DEFAULT NULL,
@@ -77,7 +72,6 @@ CREATE TABLE IF NOT EXISTS `c_log_info` (
 
 
 -- 导出  表 crm.c_project_info 结构
-DROP TABLE IF EXISTS `c_project_info`;
 CREATE TABLE IF NOT EXISTS `c_project_info` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `project_name` varchar(100) DEFAULT NULL,
@@ -93,7 +87,6 @@ CREATE TABLE IF NOT EXISTS `c_project_info` (
 
 
 -- 导出  表 crm.c_user_info 结构
-DROP TABLE IF EXISTS `c_user_info`;
 CREATE TABLE IF NOT EXISTS `c_user_info` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `login_name` varchar(20) DEFAULT NULL,

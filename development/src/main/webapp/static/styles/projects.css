@@ -3,19 +3,9 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-body, html, p, h1, h2, h3, h4, h5, h6 {
-  font-family: "Lato", "Helvetica", serif;
-  font-weight: normal; }
-
 code {
   font-family: "Consolas", "Monaco", monospace;
   font-weight: normal; }
-
-body, html, p, code {
-  color: #888888; }
-
-h1, h2, h3, h4, h5, h6 {
-  color: #444444; }
 
 pre {
   overflow: scroll;
@@ -68,7 +58,6 @@ pre .string.value {
 .example {
   position: relative; }
   .example .brick {
-   background-image:url(/static/images/project-item-mask.png);
    background-repeat:no-repeat;background-size:153px auto;background-position:top left;background-color:#cee6e9;position:relative;display:block;width:152px;height:113px;margin:0 auto 15px;font-family:"towericon";outline:none;
     opacity: 1;
     cursor: pointer;
@@ -93,5 +82,20 @@ pre .string.value {
       height: 300px; }
     .example .brick.dragging {
       opacity: 0.8; }
-    .example .brick {
-      background: #1abc9c; }
+
+  .brick.img{
+     width: 140px;
+     height: 100px;
+	 margin-bottom:0px
+  }
+  .brick.title{
+     position: relative;
+     width: 140px;
+     height: 40px;
+	 background-color: #eeeeee;
+	 overflow:hidden;
+	 text-overflow:ellipsis;
+	 text-decoration:none;
+	 font-size:12px;
+	 margin-top:0px
+  }
