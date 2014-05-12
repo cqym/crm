@@ -15,8 +15,10 @@ import org.springside.modules.persistence.SearchFilter;
 
 import com.crm.dao.DiscussMainDao;
 import com.crm.dao.ProjectInfoDao;
+import com.crm.dao.UsersProjectsRelaDao;
 import com.crm.entity.DiscussMain;
 import com.crm.entity.ProjectInfo;
+import com.crm.entity.UsersProjectsRela;
 
 @Component
 @Transactional
@@ -26,9 +28,15 @@ public class ProjectService {
 	private ProjectInfoDao projectInfoDao;
 	@Autowired
 	private DiscussMainDao discussDao;
+	@Autowired
+	private UsersProjectsRelaDao usersProjectsRelaDao;
 
 	public void saveProject(ProjectInfo entity) {
 		projectInfoDao.save(entity);
+		UsersProjectsRela rela = new UsersProjectsRela();
+		rela.setUserId(entity.getCreateUserId());
+		rela.setProjectId(entity.getId());
+		usersProjectsRelaDao.save(rela);
 	}
 
 	public void deleteProject(Long id) {
@@ -36,7 +44,11 @@ public class ProjectService {
 	}
 
 	public List<ProjectInfo> getAllProjects() {
-		return (List<ProjectInfo>) projectInfoDao.findAll();
+		Map<String, Object> param = new HashMap<String, Object>();
+		// param.put("EQ_projectId", id.toString());
+		Map<String, SearchFilter> filters = SearchFilter.parse(param);
+		Specification<ProjectInfo> spec = DynamicSpecifications.bySearchFilter(filters.values(), ProjectInfo.class);
+		return projectInfoDao.findAll(spec, new Sort(Direction.DESC, "id"));
 	}
 
 	public ProjectInfo getProjectById(Long id) {

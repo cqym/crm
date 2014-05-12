@@ -9,7 +9,7 @@
 		<li class="active" id="nav-project"><a href="${ctx}/project/list" data-stack="" data-stack-bare="" data-stack-root="">项目</a></li>
 		<li class="" id="nav-events"><a href="#" data-stack="" data-stack-bare="" data-stack-root="">回顾</a></li>
 		<li class="" id="nav-calendar"><a href="#" data-stack="" data-stack-bare="" data-stack-root="">日历</a></li>
-		<li class="" id="nav-calendar"><a href="#" data-stack="" data-stack-bare="" data-stack-root="">团队</a></li>
+		<li class="" id="nav-calendar"><a href="${ctx}/team/view" data-stack="" data-stack-bare="" data-stack-root="">团队</a></li>
 		<li class="" id="nav-calendar"><a href="#" data-stack="" data-stack-bare="" data-stack-root="">我自己</a></li>
 	</ul>
 

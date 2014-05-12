@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<div class="page sheet sheet-active sheet-root" id="page-new-project">
 <div class="page-inner">
     <h3>创建新项目</h3>
 	<form id="inputForm" action="${ctx}/project/create" method="post" class="form form-invite">
@@ -31,6 +32,7 @@
 			</div>
 		
 	</form>
+</div>
 </div>
 	<script>
 		$(document).ready(function() {
