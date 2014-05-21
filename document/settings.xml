@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"
+	xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<profiles>
+		<profile>
+			<id>myRepository</id>
+			<repositories>
+				<repository>
+					<id>timboudreau-builds</id>
+					<name>timboudreau.com builds</name>
+					<url>http://timboudreau.com/builds/plugin/repository/everything/</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>java.net-Public</id>
+					<name>Maven Java Net Snapshots and Releases</name>
+					<url>https://maven.java.net/content/groups/public/</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+				</repository>
+				<repository>
+					<id>netbeans</id>
+					<name>NetBeans</name>
+					<url>http://bits.netbeans.org/maven2/</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>central</id>
+					<name>central</name>
+					<url>http://repo1.maven.org/maven2</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+				</repository>
+				<repository>
+					<id>sonatype</id>
+					<name>sourceforge</name>
+					<url>http://oss.sonatype.org/</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>java.net-Public</id>
+					<name>Maven Java Net Snapshots and Releases</name>
+					<url>https://maven.java.net/content/groups/public/</url>
+				</pluginRepository>
+				<pluginRepository>
+					<id>sonatype-snapshots</id>
+					<name>Sonatype Snapshots</name>
+					<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+				</pluginRepository>
+				<pluginRepository>
+					<id>timboudreau-plugins</id>
+					<name>timboudreau.com plugins</name>
+					<url>http://timboudreau.com/builds/plugin/repository/everything/</url>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+	<activeProfiles>
+		<activeProfile>myRepository</activeProfile>
+	</activeProfiles>
+</settings>
